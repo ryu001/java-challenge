@@ -14,28 +14,34 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public void setEmployeeRepository(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
-
+    @Override
     public List<Employee> retrieveEmployees() {
         List<Employee> employees = employeeRepository.findAll();
         return employees;
     }
 
+    @Override
     public Employee getEmployee(Long employeeId) {
         Optional<Employee> optEmp = employeeRepository.findById(employeeId);
-        return optEmp.get();
+        return optEmp.orElse(null);
     }
 
-    public void saveEmployee(Employee employee){
+    @Override
+    public int createEmployee(Employee employee){
+        int count;
+        employee.setDelete(0);
         employeeRepository.save(employee);
+        count = 1;
+        return count;
     }
 
-    public void deleteEmployee(Long employeeId){
-        employeeRepository.deleteById(employeeId);
+    @Override
+    public void deleteEmployee(Employee employee){
+        employee.setDelete(1);
+        employeeRepository.saveAndFlush(employee);
     }
 
+    @Override
     public void updateEmployee(Employee employee) {
         employeeRepository.save(employee);
     }

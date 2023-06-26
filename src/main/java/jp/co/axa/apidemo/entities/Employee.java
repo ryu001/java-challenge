@@ -35,4 +35,8 @@ public class Employee {
     @Column(name="DEPARTMENT")
     private String department;
 
+    @Getter
+    @Setter
+    @Column(name="IS_DELETE")
+    private Integer delete;
 }
