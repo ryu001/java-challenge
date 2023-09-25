@@ -45,17 +45,17 @@ CREATE TABLE `recognition` (
 ## Directory
 
 ``` lua
-recognition-server
-├── src-controller -- controller
-├── src-db -- database config
-├── src-models -- data models
-├── src-repositories -- repository
-├── src-routes -- api routes
-└── src-utils -- common methods
+src
+├── controller -- controller
+├── db -- database config
+├── models -- data models
+├── repositories -- repository
+├── routes -- api routes
+└── utils -- common methods
 ```
 ## Tech stack
 
-| 技术                 | 说明                         |
+| Tech                 | Detail                         |
 | -------------------- | --------------------------- |
 | express              | Web application framework   |
 | MySQL                | Database                    |
@@ -73,7 +73,7 @@ recognition-server
 ## Todo
 ・Store hashed password(with salt).
 
-・Authenticate user by.
+・Authenticate user by validating token and id from DB.
 
 ・Store user's avatar images in private cloud storage.
 
