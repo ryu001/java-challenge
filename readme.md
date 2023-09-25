@@ -3,11 +3,11 @@
 ## api scheme
 | Methods	| Urls	| Actions
 | -------- | ------- | ------- |
-| GET | api/tutorials | get all Tutorials
-| GET | api/tutorials/:id | get Tutorial by id
-| POST | api/tutorials | add new Tutorial
-| PUT | api/tutorials/:id | update Tutorial by id
-| DELETE | api/tutorials/:id | remove Tutorial by id
+| POST | api/login | login
+| GET | api/users | get users to recognize
+| GET | api/users/:id/point | get user's recognized point
+| POST | api/recognitions | create a recognition
+| GET | api/activities/ | get user's recognition activities
 
 ## Database schema
 
@@ -33,15 +33,11 @@ recognition-server
 
 ## Implemented features
 ・Login with loginId and password(Password is stored in plain text)
-
 ・Authentication using JWT
-
 ・Create and retrieve recognitions
 
 ## Todo
-
 ・Store hashed password(with salt)
-
 ・Authenticate user by
 
 ## Project setup
