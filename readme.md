@@ -33,12 +33,17 @@ recognition-server
 
 ## Implemented features
 ・Login with loginId and password(Password is stored in plain text)
+
 ・Authentication using JWT
+
 ・Create and retrieve recognitions
 
 ## Todo
+
 ・Store hashed password(with salt)
+
 ・Authenticate user by
+
 ## Project setup
 ```
 npm install
